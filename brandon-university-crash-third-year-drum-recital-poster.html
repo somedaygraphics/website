@@ -159,6 +159,20 @@ h2.ixh a{color:#fff;font-weight:400;font-size:13px}
 .ixc .th{aspect-ratio:4/5}
 .zoom{all:unset;display:block;cursor:zoom-in;width:100%}
 .zoom:focus-visible{outline:3px dashed var(--hot);outline-offset:4px}
+/* wall-poster look: no frames, each piece at its own shape and full column width, captions lined up */
+.wall,.feat,.ix{align-items:end}
+.card .pic,.feat .fpic,.ixc .th{background:none;padding:0;box-shadow:none;aspect-ratio:auto;display:block;overflow:visible}
+.card .pic img,.feat .fpic img,.ixc .th img{position:static;inset:auto;width:100%;height:auto;display:block;filter:drop-shadow(3px 6px 0 rgba(20,20,20,.2));transition:filter .2s}
+.card:hover .pic img,.card:focus-visible .pic img,.feat a:hover .fpic img,.feat a:focus-visible .fpic img,.ixc a:hover .th img,.ixc a:focus-visible .th img{filter:drop-shadow(4px 8px 0 var(--hot))}
+.feat a:hover .fpic,.feat a:focus-visible .fpic{box-shadow:none}
+.ixc a,.ixc.locked{background:none;padding:0;box-shadow:none;height:auto}
+.ixc a:hover,.ixc a:focus-visible{box-shadow:none}
+.card.locked .pic,.card.vid .pic{aspect-ratio:.707;display:grid;box-shadow:3px 6px 0 rgba(20,20,20,.2)}
+.card.locked .pic{background:#f6bdcd center/cover no-repeat}
+.ixc.locked .th,.ixc .th:has(.vplay){aspect-ratio:.707;display:grid;place-items:center;box-shadow:3px 6px 0 rgba(20,20,20,.2)}
+.ixc.locked .th{background-size:cover;background-position:center}
+.ix{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:26px 20px}
+@media (max-width:700px){.ix{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}}
 </style></head><body>
 <div class="wrap">
   <div class="top">
