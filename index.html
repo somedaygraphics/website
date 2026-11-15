@@ -386,6 +386,7 @@ SPOTS.forEach(s=>{const [x1,y1,x2,y2]=s.r,d=document.createElement('div');d.clas
 // keyboard + screen readers: every glowing thing is a named button (Tab to it, Enter or Space to open)
 [...OBJS,...SPOTS].forEach(t=>{const d=t.el;if(!d)return;d.tabIndex=0;d.setAttribute('role','button');d.setAttribute('aria-label',labelOf(t));
   d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(t)}});
+  d.addEventListener('mousedown',e=>e.preventDefault()); // a mouse click shouldn't move focus (focusing scrolls the room and the click misses)
   d.addEventListener('focus',()=>{d.setAttribute('aria-label',labelOf(t));setOn(t)});d.addEventListener('blur',()=>{if(cur===t)setOn(null)})});
 
 // placeholder posters (real posters plug in here)

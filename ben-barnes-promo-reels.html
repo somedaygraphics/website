@@ -223,7 +223,7 @@ function index(){fromCat='all';LB=[];const P=D.projects,N=P.length+1;const pad=n
   const chips=p=>p.cats.map(c=>`<i>${esc(CATS[c].label)}</i>`).join('');
   view.innerHTML=`<h1 class="ransom" id="h"></h1>
   <p class="ixlede"><b>${N}</b> client projects &middot; <b>${D.concept.length}</b> concept &amp; personal pieces &middot; click anything to look closer</p>
-  <ul class="feat">${D.featured.map(id=>byId[id]).filter(Boolean).map((p,n)=>`<li><a href="${p.slug}.html" data-p="${p.id}"><div class="fpic"><img src="${src(p.cover)}" alt="${esc(p.title)} for ${esc(p.client)}, designed by Raissa Camargo" loading="eager"${n?'':' fetchpriority="high"'} decoding="async"></div><b>${esc(p.title)}</b><small>${esc(p.client)}</small></a></li>`).join('')}</ul>
+  <ul class="feat">${D.featured.map(id=>byId[id]).filter(Boolean).map((p,n)=>`<li><a href="${p.slug}.html" data-p="${p.id}"><div class="fpic"><img src="${src(p.cover,1)}" alt="${esc(p.title)} for ${esc(p.client)}, designed by Raissa Camargo" loading="eager"${n?'':' fetchpriority="high"'} decoding="async"></div><b>${esc(p.title)}</b><small>${esc(p.client)}</small></a></li>`).join('')}</ul>
   <h2 class="ixh">client work</h2>
   <ol class="ix">
     ${P.map((p,i)=>`<li class="ixc"><a href="${p.slug}.html" data-p="${p.id}"><div class="th">${p.cover?`<img src="${src(p.cover,1)}" alt="${esc(p.title)} for ${esc(p.client)}" loading="lazy">`:`<span class="vplay"></span>`}</div><div class="tx"><span class="no">${pad(i+1)}</span><b>${esc(p.title)}</b><small>${esc(p.client)}${p.year?' &middot; '+esc(p.year):''}</small><span class="ch">${chips(p)}</span></div></a></li>`).join('')}
