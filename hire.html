@@ -85,6 +85,7 @@ button.go[disabled]{opacity:.6;cursor:wait}
 .thanks .big{font-size:40px;font-weight:700;font-style:italic;color:var(--hot);transform:rotate(-3deg);display:inline-block;margin-bottom:10px}
 .thanks p{font-size:15.5px;line-height:1.4;max-width:40ch;margin:0 auto 8px}
 .thanks small{display:block;color:var(--muted);font-style:italic;margin-top:12px}
+.privacy{margin:14px 0 0;font-size:12px;font-style:italic;opacity:.7}
 </style></head><body>
 <div class="wrap">
   <div class="top"><a class="back" href="index.html">&larr; back to my room</a></div>
@@ -100,9 +101,9 @@ button.go[disabled]{opacity:.6;cursor:wait}
       </div>
     </div>
     <div class="sheet" id="sheet">
-      <form name="hire" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="form">
+      <form name="hire" method="POST" id="form">
         <input type="hidden" name="form-name" value="hire">
-        <p class="hp"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <p class="hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <h2>tell me everything</h2>
         <div class="row">
           <label class="f"><span>your name</span><input name="name" autocomplete="name" required></label>
@@ -122,6 +123,7 @@ button.go[disabled]{opacity:.6;cursor:wait}
         <div class="row"><label class="f"><span>deadline</span><input name="deadline" placeholder="e.g. before the march tour"></label><label class="f"><span>how did you find me?</span><input name="found" placeholder="instagram, a friend, a poster on a wall…"></label></div>
 
         <div class="send"><button class="go" type="submit" id="go">send it ♥</button><p class="err" id="err" role="alert"></p></div>
+        <p class="privacy">I&rsquo;ll only use your details to reply about your project. No mailing lists, never shared.</p>
       </form>
     </div>
   </div>

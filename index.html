@@ -221,7 +221,7 @@ body.night #moonGlow{--g:228,236,255;--f:.42;mix-blend-mode:screen;animation:moo
 :focus-visible{outline:3px dashed var(--hot);outline-offset:3px}
 
 /* corner menu (also the keyboard route) */
-#note{position:absolute;left:2.1%;top:49%;width:max-content;box-sizing:border-box;padding:calc(var(--u)*25) calc(var(--u)*29) calc(var(--u)*23);text-align:center;background:#fffaf2 url(img/photocopy.webp) center/400px;background-blend-mode:multiply;box-shadow:calc(var(--u)*6) calc(var(--u)*8) 0 rgba(20,20,20,.16);transform:rotate(-2.5deg);cursor:auto}
+#note{position:absolute;left:2.1%;top:51%;width:max-content;box-sizing:border-box;padding:calc(var(--u)*25) calc(var(--u)*29) calc(var(--u)*23);text-align:center;background:#fffaf2 url(img/photocopy.webp) center/400px;background-blend-mode:multiply;box-shadow:calc(var(--u)*6) calc(var(--u)*8) 0 rgba(20,20,20,.16);transform:rotate(-2.5deg);cursor:auto}
 #note .tape{width:calc(var(--u)*86);height:calc(var(--u)*22);left:50%;top:calc(var(--u)*-13);transform:translateX(-50%) rotate(-4deg);background:rgba(255,255,255,.7)}
 #note p{margin:0 0 calc(var(--u)*14);font-family:var(--scrawl);font-weight:700;font-size:calc(var(--u)*25);line-height:1.15;color:var(--ink)}
 #note p b{font-weight:400;color:var(--hot)}
@@ -257,6 +257,12 @@ body.night #moonGlow{--g:228,236,255;--f:.42;mix-blend-mode:screen;animation:moo
 .mcredit{display:none;margin:10px 0 0;font-size:10px;letter-spacing:.04em;opacity:.55;text-align:center}
 @media (max-width:700px),(max-height:560px){.mcredit{display:block}}
 #credit{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:4;margin:0;font:11px/1 var(--body);letter-spacing:.04em;color:var(--ink);opacity:.5;pointer-events:none}
+.tagline{display:block;font-family:var(--head);font-size:calc(var(--u)*25);line-height:1.15;margin-bottom:calc(var(--u)*12);text-wrap:balance}
+#quick{display:flex;flex-wrap:wrap;gap:calc(var(--u)*12);margin-top:calc(var(--u)*18)}
+#quick a{font-family:var(--type);font-size:calc(var(--u)*19);text-decoration:none;color:var(--ink);background:#fff;padding:calc(var(--u)*7) calc(var(--u)*14) calc(var(--u)*5);box-shadow:calc(var(--u)*3) calc(var(--u)*3) 0 rgba(20,20,20,.22);transform:rotate(-1.5deg);cursor:var(--hand);white-space:nowrap}
+#quick a.h{background:var(--ink);color:#fff;box-shadow:calc(var(--u)*3) calc(var(--u)*3) 0 var(--hot);transform:rotate(1.2deg)}
+#quick a:hover,#quick a:focus-visible{background:var(--hot);color:#fff}
+.obj:focus-visible,.spot:focus-visible{outline:calc(var(--u)*4) dashed var(--hot);outline-offset:calc(var(--u)*6)}
 </style>
 
 <div id="loading">opening the door&hellip;</div>
@@ -267,7 +273,7 @@ body.night #moonGlow{--g:228,236,255;--f:.42;mix-blend-mode:screen;animation:moo
     <div id="sky" class="abs" aria-hidden="true"><div class="stars"></div></div>
     <img id="bg" alt="Rai's bedroom: a bed with two cats, a record player and TV on the shelf, a clothes rack, posters on the wall" src="img/background.webp">
     <div id="spots"></div>
-    <p id="intro"><b>Rai</b> is a multidisciplinary artist and freelance graphic designer for music and entertainment, based in S&atilde;o Paulo, working worldwide.<br><br>Clients include Los Angeles City Parks, Ben Barnes, JVK, Riley Roth, Marcus Veltri, and others under NDA.<br><a data-umami-event="email click" id="mail" href="mailto:rai@raissacamargo.com">rai@raissacamargo.com</a><span id="soc"><a data-umami-event="instagram click" href="https://www.instagram.com/somedaygraphics" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a><a data-umami-event="pinterest click" href="https://www.pinterest.com/somedaygraphics/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.6 20.6l1.9-8.2M12 7.4c2.6 0 4.3 1.7 4.3 3.9 0 2.5-1.4 4.3-3.3 4.3-1.1 0-1.9-.8-1.7-1.9.3-1.3.9-2.6.9-3.5 0-.8-.4-1.4-1.3-1.4-1 0-1.9 1.1-1.9 2.5 0 .9.3 1.5.3 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a data-umami-event="behance click" href="https://www.behance.net/somedaygraphics" target="_blank" rel="noopener" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M3 6.5h5.2c1.8 0 3 .9 3 2.4 0 1.1-.7 1.8-1.6 2.1 1.2.3 2 1.2 2 2.5 0 1.8-1.4 2.9-3.4 2.9H3z M3 11h4.9 M14.2 12.9h6.3c0-2.1-1.3-3.6-3.2-3.6s-3.3 1.6-3.3 3.6 1.3 3.6 3.4 3.6c1.4 0 2.4-.6 2.9-1.6 M15 7.2h4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg></a></span></p>
+    <p id="intro"><strong class="tagline">Tour posters, merch &amp; album artwork for music.</strong><b>Rai</b> is a multidisciplinary artist and freelance graphic designer for music and entertainment, based in S&atilde;o Paulo, working worldwide.<br><br>Clients include Los Angeles City Parks, Ben Barnes, JVK, Riley Roth, Marcus Veltri, and others under NDA.<br><a data-umami-event="email click" id="mail" href="mailto:rai@raissacamargo.com">rai@raissacamargo.com</a><span id="soc"><a data-umami-event="instagram click" href="https://www.instagram.com/somedaygraphics" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a><a data-umami-event="pinterest click" href="https://www.pinterest.com/somedaygraphics/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.6 20.6l1.9-8.2M12 7.4c2.6 0 4.3 1.7 4.3 3.9 0 2.5-1.4 4.3-3.3 4.3-1.1 0-1.9-.8-1.7-1.9.3-1.3.9-2.6.9-3.5 0-.8-.4-1.4-1.3-1.4-1 0-1.9 1.1-1.9 2.5 0 .9.3 1.5.3 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a data-umami-event="behance click" href="https://www.behance.net/somedaygraphics" target="_blank" rel="noopener" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M3 6.5h5.2c1.8 0 3 .9 3 2.4 0 1.1-.7 1.8-1.6 2.1 1.2.3 2 1.2 2 2.5 0 1.8-1.4 2.9-3.4 2.9H3z M3 11h4.9 M14.2 12.9h6.3c0-2.1-1.3-3.6-3.2-3.6s-3.3 1.6-3.3 3.6 1.3 3.6 3.4 3.6c1.4 0 2.4-.6 2.9-1.6 M15 7.2h4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg></a></span><span id="quick"><a href="work.html#all">see my work &#x2605;</a><a href="hire.html" class="h">hire rai</a></span></p>
     <div id="note"><span class="tape" aria-hidden="true"></span>
       <p>click the <b>glowing</b> stuff<br>to know more</p>
       <button id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">site menu</button>
@@ -377,6 +383,10 @@ OBJS.forEach(o=>{
 });
 SPOTS.forEach(s=>{const [x1,y1,x2,y2]=s.r,d=document.createElement('div');d.className='spot';
   Object.assign(d.style,{left:pct(x1,W),top:pct(y1,H),width:pct(x2-x1,W),height:pct(y2-y1,H)});spotsEl.appendChild(d);s.el=d});
+// keyboard + screen readers: every glowing thing is a named button (Tab to it, Enter or Space to open)
+[...OBJS,...SPOTS].forEach(t=>{const d=t.el;if(!d)return;d.tabIndex=0;d.setAttribute('role','button');d.setAttribute('aria-label',labelOf(t));
+  d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(t)}});
+  d.addEventListener('focus',()=>{d.setAttribute('aria-label',labelOf(t));setOn(t)});d.addEventListener('blur',()=>{if(cur===t)setOn(null)})});
 
 // placeholder posters (real posters plug in here)
 // Rai's posters, shown in this order (first one shows on arrival); a cream mat fills any gap so nothing gets cropped
