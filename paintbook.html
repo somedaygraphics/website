@@ -1,0 +1,268 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Paint Me Something · Raissa Camargo</title>
+<meta name="description" content="Grab a brush and paint Raissa a little drawing in her old-school paint program. Favourites go up on the fridge.">
+<link rel="canonical" href="https://raissacamargo.com/paintbook.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Raissa Camargo">
+<meta property="og:title" content="Paint Me Something · Raissa Camargo"><meta property="og:description" content="Grab a brush and paint Raissa a little drawing in her old-school paint program. Favourites go up on the fridge.">
+<meta property="og:url" content="https://raissacamargo.com/paintbook.html"><meta property="og:image" content="https://raissacamargo.com/share-card.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://raissacamargo.com/share-card.jpg"><meta name="author" content="Raissa Camargo">
+<meta name="theme-color" content="#fde2ec">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><script defer src="https://cloud.umami.is/script.js" data-website-id="050e5cb9-ac41-4cd0-b8dd-d56ffa66f563" data-domains="raissacamargo.com,www.raissacamargo.com"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://raissacamargo.com/paintbook.html", "author": {"@type": "Person", "name": "Raissa Camargo", "url": "https://raissacamargo.com/"}, "isPartOf": {"@type": "WebSite", "@id": "https://raissacamargo.com/#site"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* An old-school paint program window sitting on Rai's pink zine paper, plus a fridge of drawings people sent. */
+:root{--ink:#141414;--zine:#fde2ec;--hot:#c8102e;--muted:#5a4a50;--head:"Averia Serif Libre",Georgia,serif;
+  --w98:#c0c0c0;--w98d:#808080;--w98l:#fff;--w98k:#0a0a0a;--ui:Tahoma,Verdana,"Segoe UI",sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--zine)}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--head);background:var(--zine);
+  padding:calc(24px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(64px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:url(img/texture-paper.webp) center/cover;opacity:.55;mix-blend-mode:multiply}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:3px dashed var(--hot);outline-offset:3px}
+.top{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.back{font-size:15px;color:#fff;background:var(--ink);padding:8px 16px 6px;text-decoration:none;transform:rotate(-1.5deg);box-shadow:3px 3px 0 var(--hot);display:inline-block}
+.back:hover{background:var(--hot);box-shadow:3px 3px 0 var(--ink)}
+.back.alt{background:#fff;color:var(--ink);box-shadow:3px 3px 0 rgba(20,20,20,.25);transform:rotate(1deg)}
+.head{text-align:center;margin:0 auto 26px;max-width:54ch}
+.ransom{margin:0 0 14px;font-size:clamp(28px,5vw,46px);font-weight:400;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 2px;line-height:1.25;transform:rotate(-2deg)}
+.ransom span{display:inline-block;padding:2px 6px 1px;box-shadow:1px 2px 0 rgba(20,20,20,.18)}
+.ransom{gap:4px .45em}.ransom .wd{display:inline-flex;gap:2px;white-space:nowrap;padding:0;box-shadow:none}
+.head p{margin:0;font-size:15.5px;line-height:1.45;text-wrap:balance}
+
+/* ---- the paint window ---- */
+.win{background:var(--w98);font-family:var(--ui);font-size:12px;color:#000;padding:3px;max-width:760px;margin:0 auto;
+  box-shadow:inset -1px -1px var(--w98k),inset 1px 1px var(--w98l),inset -2px -2px var(--w98d),inset 2px 2px #dfdfdf,8px 10px 0 rgba(20,20,20,.18)}
+.bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-weight:700;padding:3px 3px 3px 6px;gap:8px}
+.bar .t{display:flex;align-items:center;gap:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .btns{display:flex;gap:2px}
+.bar .btns i{display:grid;place-items:center;width:16px;height:14px;background:var(--w98);color:#000;font-style:normal;font-size:10px;font-weight:700;line-height:1;
+  box-shadow:inset -1px -1px var(--w98k),inset 1px 1px var(--w98l),inset -2px -2px var(--w98d)}
+.menu{display:flex;gap:2px;padding:2px 2px 3px}
+.menu span{padding:2px 6px}
+.menu span u{text-decoration:underline}
+.body{display:flex;gap:6px;padding:4px}
+.tools{display:grid;grid-template-columns:repeat(2,28px);gap:2px;align-content:start;padding:2px}
+.tb{width:28px;height:28px;display:grid;place-items:center;background:var(--w98);border:0;padding:0;cursor:pointer;font-size:15px;line-height:1;color:#000;
+  box-shadow:inset -1px -1px var(--w98k),inset 1px 1px var(--w98l),inset -2px -2px var(--w98d),inset 2px 2px #dfdfdf}
+.tb[aria-pressed=true]{background:repeating-conic-gradient(#fff 0 25%,#dfdfdf 0 50%) 0 0/2px 2px;box-shadow:inset 1px 1px var(--w98k),inset -1px -1px var(--w98l),inset 2px 2px var(--w98d)}
+.tb svg{width:18px;height:18px}
+.sizes{grid-column:1/-1;margin-top:4px;padding:3px;display:flex;flex-direction:column;gap:2px;align-items:center;
+  box-shadow:inset 1px 1px var(--w98d),inset -1px -1px var(--w98l)}
+.sz{width:48px;height:18px;border:0;background:transparent;display:grid;place-items:center;cursor:pointer;padding:0}
+.sz b{display:block;border-radius:50%;background:#000}
+.sz[aria-pressed=true]{background:#000080}.sz[aria-pressed=true] b{background:#fff}
+.stage{flex:1;min-width:0;background:var(--w98d);padding:4px;box-shadow:inset 1px 1px var(--w98k),inset -1px -1px var(--w98l)}
+canvas{display:block;width:100%;height:auto;background:#fff;touch-action:none;cursor:crosshair;image-rendering:auto}
+.pal{display:flex;gap:6px;align-items:center;padding:4px 6px 6px}
+.cur{position:relative;width:34px;height:34px;flex:none;box-shadow:inset 1px 1px var(--w98d),inset -1px -1px var(--w98l);background:#dfdfdf}
+.cur i{position:absolute;width:15px;height:15px;box-shadow:inset 1px 1px var(--w98d),inset -1px -1px var(--w98l),0 0 0 1px #000}
+.cur .fg{left:5px;top:5px;z-index:1}.cur .bgc{right:5px;bottom:5px}
+.swatches{display:grid;grid-template-columns:repeat(14,minmax(0,24px));gap:2px;flex:1;min-width:0}
+.sw{aspect-ratio:1;min-width:0;border:0;padding:0;cursor:pointer;box-shadow:inset 1px 1px var(--w98d),inset -1px -1px var(--w98l),inset 0 0 0 2px #dfdfdf}
+.sw[aria-pressed=true]{outline:2px solid #000;outline-offset:0;z-index:1}
+.status{display:flex;gap:4px;padding:2px 3px 1px}
+.status span{flex:1;padding:2px 5px;box-shadow:inset 1px 1px var(--w98d),inset -1px -1px var(--w98l);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.status span+span{flex:0 0 auto}
+.acts{display:flex;gap:4px;padding:0 4px 4px;flex-wrap:wrap}
+.w98b{font:12px var(--ui);color:#000;background:var(--w98);border:0;padding:5px 12px;cursor:pointer;min-width:64px;
+  box-shadow:inset -1px -1px var(--w98k),inset 1px 1px var(--w98l),inset -2px -2px var(--w98d),inset 2px 2px #dfdfdf}
+.w98b:active{box-shadow:inset 1px 1px var(--w98k),inset -1px -1px var(--w98l),inset 2px 2px var(--w98d)}
+.w98b:disabled{color:var(--w98d);text-shadow:1px 1px #fff;cursor:default}
+@media (max-width:620px){
+  .body{flex-direction:column}
+  .tools{grid-template-columns:repeat(6,32px);justify-content:center}.tb{width:32px;height:32px}
+  .sizes{flex-direction:row;grid-column:auto/span 6;justify-content:center}.sz{width:40px}
+  .swatches{grid-template-columns:repeat(10,1fr)}
+  .menu{display:none}
+}
+
+/* ---- the send-it sheet ---- */
+.sheet{position:relative;background:#fff;max-width:520px;margin:34px auto 54px;padding:26px 28px 22px;box-shadow:6px 8px 0 rgba(20,20,20,.16);transform:rotate(-.5deg)}
+.sheet::before{content:"";position:absolute;top:-13px;left:50%;width:110px;height:26px;margin-left:-55px;background:rgba(185,210,236,.9);transform:rotate(3deg)}
+.sheet h2{margin:0 0 14px;font-size:19px;text-align:center}
+label{display:block;margin-bottom:14px;font-size:13px;color:var(--muted)}
+label b{color:var(--ink);font-size:14px}
+input{display:block;width:100%;margin-top:4px;font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:2px dotted #c9a9b6;padding:6px 2px;border-radius:0}
+input::placeholder{font-style:italic;font-size:13.5px;color:#a8939b}
+input:focus{outline:none;border-color:var(--hot)}
+.go{display:block;margin:6px auto 0;font:inherit;font-size:17px;font-weight:700;color:#fff;background:var(--ink);border:0;padding:11px 26px 9px;cursor:pointer;box-shadow:4px 4px 0 var(--hot);transform:rotate(-1deg)}
+.go:hover{background:var(--hot);box-shadow:4px 4px 0 var(--ink)}
+.go:disabled{opacity:.6;cursor:wait}
+.note{margin:12px 0 0;font-size:12px;font-style:italic;text-align:center;color:var(--muted)}
+.err{color:var(--hot);font-size:14px;text-align:center;margin:10px 0 0;min-height:1em}
+.thanks{text-align:center}.thanks b{display:block;font-size:22px;margin-bottom:6px}
+.thanks button{margin-top:14px;font:inherit;font-size:14px;background:none;border:0;text-decoration:underline;cursor:pointer;color:var(--hot)}
+
+/* ---- the fridge ---- */
+.fridge h2{text-align:center;font-size:22px;margin:0 0 6px}
+.fridge>p{text-align:center;margin:0 0 26px;font-size:14px;font-style:italic;color:var(--muted)}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:30px 24px}
+.pic{margin:0;background:#fff;padding:10px 10px 12px;box-shadow:4px 6px 0 rgba(20,20,20,.14);transform:rotate(var(--r,0deg));position:relative}
+.pic::before{content:"";position:absolute;top:-10px;left:50%;width:70px;height:20px;margin-left:-35px;background:var(--tape,rgba(200,16,46,.5));transform:rotate(var(--tr,-3deg))}
+.pic img{display:block;width:100%;height:auto;border:1px solid #eee}
+.pic figcaption{margin-top:8px;font-size:13.5px;line-height:1.35}
+.pic figcaption b{display:block}
+.pic figcaption i{display:block;color:var(--muted);font-size:12.5px}
+.empty{text-align:center;font-style:italic;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.pic,.sheet,.go,.back,.ransom{transform:none}}
+</style></head>
+<body><div class="wrap">
+<nav class="top"><a class="back" href="index.html">&larr; back to my room</a><a class="back alt" href="guestbook.html">sign the guestbook instead &#9825;</a></nav>
+
+<header class="head">
+  <h1 class="ransom" aria-label="paint me something"></h1>
+  <p>grab a brush and make me a little drawing! a doodle, a self-portrait, my cats, anything. i&rsquo;ll stick my favourites on the fridge below &#9733;</p>
+</header>
+
+<section class="win" aria-label="paint program">
+  <div class="bar"><span class="t">&#127912; untitled - paint for rai</span><span class="btns" aria-hidden="true"><i>_</i><i>&#9633;</i><i>&times;</i></span></div>
+  <div class="menu" aria-hidden="true"><span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>I</u>mage</span><span><u>C</u>olors</span><span><u>H</u>elp</span></div>
+  <div class="body">
+    <div class="tools" role="toolbar" aria-label="tools">
+      <button class="tb" data-tool="pencil" aria-label="pencil" title="pencil"><svg viewBox="0 0 20 20"><path d="M3 17l1.2-4L13 4.2l2.8 2.8L7 15.8z" fill="#ffd34d" stroke="#000"/><path d="M3 17l1.2-4 2.8 2.8z" fill="#f2c09a" stroke="#000"/><path d="M13 4.2l1.6-1.6 2.8 2.8L15.8 7z" fill="#e85a7a" stroke="#000"/></svg></button>
+      <button class="tb" data-tool="brush" aria-label="brush" title="brush"><svg viewBox="0 0 20 20"><path d="M11 9l6-7 1 1-7 6z" fill="#a0522d" stroke="#000"/><path d="M10 9.5c-3 0-4 2-4.5 4S3 17 3 17s5 .5 6.5-2 1-3.5.5-5.5z" fill="#c8102e" stroke="#000"/></svg></button>
+      <button class="tb" data-tool="spray" aria-label="spray can" title="spray can"><svg viewBox="0 0 20 20"><rect x="6" y="7" width="7" height="11" rx="1" fill="#9fb8e6" stroke="#000"/><rect x="7.5" y="4" width="4" height="3" fill="#ddd" stroke="#000"/><g fill="#000"><circle cx="15" cy="3" r=".8"/><circle cx="17" cy="5" r=".8"/><circle cx="15.5" cy="6.5" r=".8"/><circle cx="18" cy="2" r=".8"/></g></svg></button>
+      <button class="tb" data-tool="fill" aria-label="fill bucket" title="fill bucket"><svg viewBox="0 0 20 20"><path d="M4 9l6-6 6 6-6 6z" fill="#fff" stroke="#000"/><path d="M4 9h12l-6 6z" fill="#3a7bd5" stroke="#000"/><path d="M16.5 11c1 1.6 1.5 2.6 1.5 3.2a1.5 1.5 0 01-3 0c0-.6.5-1.6 1.5-3.2z" fill="#3a7bd5" stroke="#000"/></svg></button>
+      <button class="tb" data-tool="eraser" aria-label="eraser" title="eraser"><svg viewBox="0 0 20 20"><path d="M3 13l7-7 6 6-4 4H7z" fill="#f7b6c8" stroke="#000"/><path d="M3 13l4 3h5" fill="none" stroke="#000"/></svg></button>
+      <button class="tb" data-tool="picker" aria-label="pick a colour from the drawing" title="pick colour"><svg viewBox="0 0 20 20"><path d="M4 16l7-7 2 2-7 7H4z" fill="#fff" stroke="#000"/><path d="M12 6l2-2 4 4-2 2z" fill="#555" stroke="#000"/><path d="M11 7l4 4" stroke="#000"/></svg></button>
+      <div class="sizes" role="group" aria-label="brush size">
+        <button class="sz" data-size="2" aria-label="tiny"><b style="width:3px;height:3px"></b></button>
+        <button class="sz" data-size="5" aria-label="small"><b style="width:5px;height:5px"></b></button>
+        <button class="sz" data-size="10" aria-label="medium"><b style="width:8px;height:8px"></b></button>
+        <button class="sz" data-size="20" aria-label="big"><b style="width:12px;height:12px"></b></button>
+      </div>
+    </div>
+    <div class="stage"><canvas id="cv" width="640" height="480" aria-label="drawing canvas"></canvas></div>
+  </div>
+  <div class="pal">
+    <div class="cur" aria-hidden="true"><i class="fg" id="fgc"></i><i class="bgc" style="background:#fff"></i></div>
+    <div class="swatches" id="sw" role="group" aria-label="colours"></div>
+  </div>
+  <div class="acts">
+    <button class="w98b" id="undo" disabled>&#8630; Undo</button>
+    <button class="w98b" id="clear">Clear</button>
+  </div>
+  <div class="status" aria-live="polite"><span id="hint">Draw with your mouse, finger or pencil.</span><span id="xy">640 &times; 480</span></div>
+</section>
+
+<section class="sheet" aria-labelledby="sendh">
+  <form id="form" novalidate>
+    <h2 id="sendh">send it to rai &#9993;</h2>
+    <label><b>your name</b><input name="name" required maxlength="40" autocomplete="name" placeholder="or a nickname"></label>
+    <label><b>a little note</b> (optional)<input name="note" maxlength="140" placeholder="what did you draw?"></label>
+    <p class="hp" aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <button class="go" id="go" type="submit">send my drawing &#9825;</button>
+    <p class="err" id="err" role="alert"></p>
+    <p class="note">drawings go on the fridge once i&rsquo;ve seen them. your name, note and drawing will be public; nothing else is shown.</p>
+  </form>
+  <div class="thanks" id="thanks" hidden tabindex="-1"><b>thank you!! &#9825;</b>your drawing is on its way to me. keep an eye on the fridge!<br><button type="button" id="again">draw another one</button></div>
+</section>
+
+<section class="fridge" aria-labelledby="fridgeh">
+  <h2 id="fridgeh">the fridge &#9733;</h2>
+  <p>drawings people made for me</p>
+  <div class="wall" id="wall"><p class="empty">loading&hellip;</p></div>
+</section>
+</div>
+
+<script>
+const SB_URL='https://bsxhjhjsbnxqapwfxhzi.supabase.co',SB_KEY='sb_publishable_HGjBYa4LAId3hIb5GnZD-g_Y8afahAP',W3F='d0a1a941-1296-4ccd-8050-523eb5702a66';
+const READY=!SB_URL.startsWith('__');
+const T=(n,d)=>{try{window.umami&&umami.track(n,d)}catch(e){}};
+const $=s=>document.querySelector(s);
+const sbHeaders=x=>Object.assign({apikey:SB_KEY},SB_KEY.startsWith('eyJ')?{Authorization:'Bearer '+SB_KEY}:{},x||{});
+
+// title
+(()=>{const RB=[['#141414','#fff'],['#fff','#141414'],['#c8102e','#fff'],['#fff','#141414'],['#b9d2ec','#141414']];const h=$('.ransom');
+ let i=0;'paint me something'.split(' ').forEach(w=>{const wd=document.createElement('span');wd.className='wd';wd.setAttribute('aria-hidden','true');
+  [...w].forEach(c=>{const s=document.createElement('span');s.textContent=c;const k=(i*7+3)%RB.length;s.style.background=RB[k][0];s.style.color=RB[k][1];s.style.fontWeight=i%3?700:400;s.style.transform=`rotate(${((i*37)%11)-5}deg)`;wd.appendChild(s);i++});h.appendChild(wd);i++})})();
+
+// ---------- paint ----------
+const cv=$('#cv'),cx=cv.getContext('2d',{willReadFrequently:true});
+const PAL=['#000000','#808080','#800000','#808000','#008000','#008080','#000080','#800080','#5c3a21','#c8102e','#f26d21','#b9d2ec','#f6c8d8','#7b4fa0',
+           '#ffffff','#c0c0c0','#ff0000','#ffff00','#00ff00','#00ffff','#0000ff','#ff00ff','#d2a679','#ff8fab','#ffd166','#3a7bd5','#e9f1fb','#c7f0d8'];
+let tool='brush',size=5,color='#000000',drawing=false,last=null,sprayTimer=null,dirty=false;const hist=[];
+function blank(){cx.fillStyle='#fff';cx.fillRect(0,0,cv.width,cv.height)}blank();
+const sw=$('#sw');PAL.forEach(c=>{const b=document.createElement('button');b.className='sw';b.style.background=c;b.setAttribute('aria-label','colour '+c);b.dataset.c=c;b.onclick=()=>setColor(c);sw.appendChild(b)});
+function setColor(c){color=c;$('#fgc').style.background=c;sw.querySelectorAll('.sw').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===c))}
+function setTool(t){tool=t;document.querySelectorAll('.tb').forEach(b=>b.setAttribute('aria-pressed',b.dataset.tool===t));
+  $('#hint').textContent={pencil:'Pencil: fine lines.',brush:'Brush: soft round strokes.',spray:'Spray can: hold it down for more paint.',fill:'Fill: tap an area to fill it.',eraser:'Eraser: paints white.',picker:'Pick colour: tap the drawing to grab a colour.'}[t]}
+function setSize(s){size=s;document.querySelectorAll('.sz').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.size===s))}
+document.querySelectorAll('.tb').forEach(b=>b.onclick=()=>setTool(b.dataset.tool));
+document.querySelectorAll('.sz').forEach(b=>b.onclick=()=>setSize(+b.dataset.size));
+setColor('#000000');setTool('brush');setSize(5);
+function snap(){hist.push(cx.getImageData(0,0,cv.width,cv.height));if(hist.length>30)hist.shift();$('#undo').disabled=false}
+$('#undo').onclick=()=>{const d=hist.pop();if(d)cx.putImageData(d,0,0);$('#undo').disabled=!hist.length};
+$('#clear').onclick=()=>{snap();blank();dirty=false};
+const pos=e=>{const r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)*cv.width/r.width,y:(e.clientY-r.top)*cv.height/r.height}};
+function stroke(a,b){cx.strokeStyle=tool==='eraser'?'#fff':color;cx.lineCap=cx.lineJoin='round';
+  cx.lineWidth=tool==='pencil'?Math.max(1,size/2.5):tool==='eraser'?size*2:size;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x+.01,b.y);cx.stroke()}
+function spray(p){cx.fillStyle=color;const r=size*2.2;for(let i=0;i<Math.max(10,size*2);i++){const a=Math.random()*6.283,d=Math.sqrt(Math.random())*r;cx.fillRect(p.x+Math.cos(a)*d,p.y+Math.sin(a)*d,1.4,1.4)}}
+function hex(c){const n=parseInt(c.slice(1),16);return[n>>16&255,n>>8&255,n&255]}
+function fill(p){const x0=Math.floor(p.x),y0=Math.floor(p.y),W=cv.width,H=cv.height;const im=cx.getImageData(0,0,W,H),d=im.data;
+  const i0=(y0*W+x0)*4,tr=d[i0],tg=d[i0+1],tb=d[i0+2];const[fr,fg,fb]=hex(color);if(Math.abs(tr-fr)+Math.abs(tg-fg)+Math.abs(tb-fb)<6)return;
+  const TOL=96,seen=new Uint8Array(W*H),st=[x0,y0];const ok=i=>{const k=i*4;return Math.abs(d[k]-tr)+Math.abs(d[k+1]-tg)+Math.abs(d[k+2]-tb)<=TOL};
+  while(st.length){let y=st.pop(),x=st.pop();let i=y*W+x;while(x>=0&&!seen[i]&&ok(i)){x--;i--}x++;i++;let up=false,dn=false;
+    while(x<W&&!seen[i]&&ok(i)){seen[i]=1;const k=i*4;d[k]=fr;d[k+1]=fg;d[k+2]=fb;d[k+3]=255;
+      if(y>0){const u=i-W;if(!seen[u]&&ok(u)){if(!up){st.push(x,y-1);up=true}}else up=false}
+      if(y<H-1){const v=i+W;if(!seen[v]&&ok(v)){if(!dn){st.push(x,y+1);dn=true}}else dn=false}
+      x++;i++}}
+  // grow 1px into antialiased edges so fills don't leave a halo
+  const grow=[];for(let y=1;y<H-1;y++)for(let x=1;x<W-1;x++){const i=y*W+x;if(seen[i])continue;if(seen[i-1]||seen[i+1]||seen[i-W]||seen[i+W])grow.push(i)}
+  grow.forEach(i=>{const k=i*4;const L=d[k]+d[k+1]+d[k+2];if(L>200){d[k]=fr;d[k+1]=fg;d[k+2]=fb}});
+  cx.putImageData(im,0,0)}
+cv.addEventListener('pointerdown',e=>{e.preventDefault();cv.setPointerCapture(e.pointerId);const p=pos(e);
+  if(tool==='picker'){const c=cx.getImageData(p.x|0,p.y|0,1,1).data;setColor('#'+[c[0],c[1],c[2]].map(v=>v.toString(16).padStart(2,'0')).join(''));setTool('brush');return}
+  snap();dirty=true;
+  if(tool==='fill'){fill(p);return}
+  drawing=true;last=p;if(tool==='spray'){spray(p);sprayTimer=setInterval(()=>last&&spray(last),40)}else stroke(p,p)});
+cv.addEventListener('pointermove',e=>{const p=pos(e);$('#xy').textContent=`${p.x|0}, ${p.y|0}`;if(!drawing)return;
+  const evs=e.getCoalescedEvents?e.getCoalescedEvents():[e];evs.forEach(ev=>{const q=pos(ev);if(tool==='spray'){spray(q)}else stroke(last,q);last=q})});
+const end=()=>{drawing=false;last=null;clearInterval(sprayTimer)};
+cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);cv.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')end()});
+
+// ---------- send ----------
+const f=$('#form'),LIVE=/raissacamargo\.com$|somedaygraphics\.com$|github\.io$/.test(location.hostname);
+const uuid=()=>crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&3|8)).toString(16)});
+f.addEventListener('submit',async e=>{e.preventDefault();const err=$('#err');err.textContent='';const fd=new FormData(f);
+  if(!dirty){err.textContent='draw something first ♡';cv.scrollIntoView({behavior:'smooth',block:'center'});return}
+  if(!fd.get('name').trim()){err.textContent='please add your name ♡';f.name.focus();return}
+  const go=$('#go');go.disabled=true;go.textContent='sending…';
+  try{
+    if(LIVE&&READY&&!fd.get('bot-field')){
+      const id=uuid(),path=`pending/${id}.png`;const blob=await new Promise(r=>cv.toBlob(r,'image/png'));
+      let r=await fetch(`${SB_URL}/storage/v1/object/paintings/${path}`,{method:'POST',headers:sbHeaders({'Content-Type':'image/png','x-upsert':'false'}),body:blob});
+      if(!r.ok)throw new Error('upload '+r.status);
+      r=await fetch(`${SB_URL}/rest/v1/paintings`,{method:'POST',headers:sbHeaders({'Content-Type':'application/json',Prefer:'return=minimal'}),
+        body:JSON.stringify({name:fd.get('name').trim(),note:(fd.get('note')||'').trim()||null,image_path:path})});
+      if(!r.ok)throw new Error('save '+r.status);
+      // heads-up email for Rai with a link to see it (best effort)
+      fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+        body:JSON.stringify({access_key:W3F,subject:'\u{1F3A8} New drawing from '+fd.get('name').trim(),from_name:'raissacamargo.com paintbook',
+          'drawn by':fd.get('name').trim(),note:fd.get('note')||'',see_it:`${SB_URL}/storage/v1/object/public/paintings/${path}`,
+          to_approve:'Supabase → Table Editor → paintings → tick "approved" on this row'})}).catch(()=>{});
+    }else if(!LIVE||!READY){await new Promise(r=>setTimeout(r,400))}
+    T('drawing sent');f.hidden=true;const t=$('#thanks');t.hidden=false;t.focus();
+  }catch(x){err.textContent='hmm, that didn’t go through. try again in a moment?';go.disabled=false;go.textContent='send my drawing ♡'}
+});
+$('#again').onclick=()=>{snap();blank();dirty=false;f.reset();f.hidden=false;$('#thanks').hidden=true;$('#go').disabled=false;$('#go').textContent='send my drawing ♡';cv.scrollIntoView({behavior:'smooth',block:'center'})};
+
+// ---------- the fridge ----------
+(async()=>{const W=$('#wall');const TP=['rgba(200,16,46,.5)','rgba(185,210,236,.9)','rgba(20,20,20,.5)','rgba(246,200,216,.95)','rgba(255,214,102,.85)'];
+  if(!READY){W.innerHTML='<p class="empty">the fridge is empty for now. be the first!</p>';return}
+  try{const r=await fetch(`${SB_URL}/rest/v1/paintings?select=name,note,image_path,created_at&approved=eq.true&order=created_at.desc&limit=120`,{headers:sbHeaders()});
+    const rows=r.ok?await r.json():[];W.replaceChildren();
+    if(!rows.length){W.innerHTML='<p class="empty">the fridge is empty for now. be the first!</p>';return}
+    rows.forEach((p,i)=>{const fg=document.createElement('figure');fg.className='pic';fg.style.setProperty('--r',(((i*53)%7)-3)*.7+'deg');fg.style.setProperty('--tape',TP[i%TP.length]);fg.style.setProperty('--tr',(((i*17)%9)-4)+'deg');
+      const im=document.createElement('img');im.src=`${SB_URL}/storage/v1/object/public/paintings/${p.image_path}`;im.alt=`drawing by ${p.name}`+(p.note?`: ${p.note}`:'');im.loading='lazy';im.width=640;im.height=480;
+      const cap=document.createElement('figcaption');const b=document.createElement('b');b.textContent=p.name;cap.appendChild(b);
+      if(p.note){const n=document.createElement('i');n.textContent=p.note;cap.appendChild(n)}
+      const d=document.createElement('i');try{d.textContent=new Date(p.created_at).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}).toLowerCase()}catch(e){}cap.appendChild(d);
+      fg.append(im,cap);W.appendChild(fg)})
+  }catch(e){W.innerHTML='<p class="empty">couldn’t open the fridge right now. try again later!</p>'}})();
+</script>
+<p class="credit" style="text-align:center;font-size:12px;letter-spacing:.04em;opacity:.6;margin:40px 0 28px;padding:0 16px">designed by raíssa camargo © 2026</p><style>img,video{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}</style><script>(function(){var A="img,video,canvas,picture,figure,.pic,.fpic,.th,.poster,#scene,#lb";function no(e){if(e.target.closest&&e.target.closest(A))e.preventDefault()}document.addEventListener("contextmenu",no);document.addEventListener("dragstart",no)})()</script></body></html>
