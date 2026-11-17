@@ -111,11 +111,11 @@ input:focus{outline:none;border-color:var(--hot)}
 @media (prefers-reduced-motion:reduce){.pic,.sheet,.go,.back,.ransom{transform:none}}
 </style></head>
 <body><div class="wrap">
-<nav class="top"><a class="back" href="index.html">&larr; back to my room</a><a class="back alt" href="guestbook.html">sign the guestbook instead &#9825;</a></nav>
+<nav class="top"><a class="back" href="index.html">&larr; back to my room</a></nav>
 
 <header class="head">
   <h1 class="ransom" aria-label="paint me something"></h1>
-  <p>grab a brush and make me a little drawing! a doodle, a self-portrait, my cats, anything. i&rsquo;ll stick my favourites on the fridge below &#9733;</p>
+  <p>this is my guestbook! grab a brush, paint me a little something (a doodle, a self-portrait, my cats, anything) and leave me a note. i&rsquo;ll stick them on the fridge below &#9733;</p>
 </header>
 
 <section class="win" aria-label="paint program">
@@ -153,7 +153,7 @@ input:focus{outline:none;border-color:var(--hot)}
   <form id="form" novalidate>
     <h2 id="sendh">send it to rai &#9993;</h2>
     <label><b>your name</b><input name="name" required maxlength="40" autocomplete="name" placeholder="or a nickname"></label>
-    <label><b>a little note</b> (optional)<input name="note" maxlength="140" placeholder="what did you draw?"></label>
+    <label><b>leave me a note</b> (optional)<input name="note" maxlength="140" placeholder="say hi, where you’re from, what you drew…"></label>
     <p class="hp" aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <button class="go" id="go" type="submit">send my drawing &#9825;</button>
     <p class="err" id="err" role="alert"></p>

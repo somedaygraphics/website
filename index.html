@@ -511,7 +511,7 @@ function ransom(el,text){el.replaceChildren();el.setAttribute('aria-label',text)
   s.textContent=ch;s.style.fontFamily=RF[0];s.style.fontWeight=RW[i%RW.length];s.style.fontSize=`calc(1em*${RS[(i*3)%RS.length]})`;s.style.background=RB[h][0];s.style.color=RB[h][1];s.style.transform=`rotate(${r}deg) translateY(${(i%3)-1}px)`;
   if(RB[h][0]==='transparent')s.style.boxShadow='none';el.appendChild(s)})}
 const WORK={posters:'posters',records:'artwork',zines:'artwork',merch:'merch',branding:'branding'};
-function openWin(sec){if(sec==='guestbook'){location.href='guestbook.html';return}if(sec==='paintbook'){location.href='paintbook.html';return}if(sec==='about'){location.href='about.html';return}if(sec==='contact'){location.href='hire.html';return}if(WORK[sec]){location.href='work.html#'+WORK[sec];return}const s=SECTIONS[sec];setOn(null);lastFocus=document.activeElement;
+function openWin(sec){if(sec==='guestbook'){location.href='paintbook.html';return}if(sec==='paintbook'){location.href='paintbook.html';return}if(sec==='about'){location.href='about.html';return}if(sec==='contact'){location.href='hire.html';return}if(WORK[sec]){location.href='work.html#'+WORK[sec];return}const s=SECTIONS[sec];setOn(null);lastFocus=document.activeElement;
   ransom(document.getElementById('wt'),s.label);document.getElementById('wp').textContent=s.body;
   const wl=document.getElementById('wlinks');wl.replaceChildren(...(s.links||[]).map(([t,u])=>{const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';a.textContent=t;return a}));
   {const old=document.getElementById('wembed');if(old)old.remove();
@@ -533,7 +533,7 @@ menu.appendChild(hr());menu.appendChild(lab('by type of work'));
 [['posters','posters'],['records','album artwork'],['merch','merch'],['branding','branding']].forEach(([k,t])=>menu.appendChild(mi(t,()=>openWin(k))));
 menu.appendChild(mi('concept & personal work',()=>{location.href='concept.html'}));
 menu.appendChild(hr());
-[['about','about me'],['playlist','my playlist'],['poetry','poetry'],['guestbook','guestbook \u2661'],['paintbook','paint me something \u270e']].forEach(([k,t])=>menu.appendChild(mi(t,()=>openWin(k))));
+[['about','about me'],['playlist','my playlist'],['poetry','poetry'],['paintbook','guestbook \u270e']].forEach(([k,t])=>menu.appendChild(mi(t,()=>openWin(k))));
 menu.appendChild(mi('hire rai',()=>openWin('contact'),'hire'));
 {const m=document.createElement('div');m.className='modes';m.setAttribute('role','group');m.setAttribute('aria-label','Light');
  const mk=(night,txt,svg)=>{const b=document.createElement('button');b.type='button';b.className='mode';b.setAttribute('aria-label',txt);b.innerHTML=svg+'<span>'+txt+'</span>';
