@@ -157,7 +157,7 @@ input:focus{outline:none;border-color:var(--hot)}
     <p class="hp" aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <button class="go" id="go" type="submit">send my drawing &#9825;</button>
     <p class="err" id="err" role="alert"></p>
-    <p class="note">drawings go on the fridge once i&rsquo;ve seen them. your name, note and drawing will be public; nothing else is shown.</p>
+    <p class="note">drawings go on the fridge once i&rsquo;ve seen them. your name, note and drawing will be public; nothing else is shown. <a href="privacy.html" style="color:inherit">privacy</a></p>
   </form>
   <div class="thanks" id="thanks" hidden tabindex="-1"><b>thank you!! &#9825;</b>your drawing is on its way to me. keep an eye on the fridge!<br><button type="button" id="again">draw another one</button></div>
 </section>
@@ -265,4 +265,4 @@ $('#again').onclick=()=>{snap();blank();dirty=false;f.reset();f.hidden=false;$('
       fg.append(im,cap);W.appendChild(fg)})
   }catch(e){W.innerHTML='<p class="empty">couldn’t open the fridge right now. try again later!</p>'}})();
 </script>
-<p class="credit" style="text-align:center;font-size:12px;letter-spacing:.04em;opacity:.6;margin:40px 0 28px;padding:0 16px">designed by raíssa camargo © 2026</p><style>img,video{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}</style><script>(function(){var A="img,video,canvas,picture,figure,.pic,.fpic,.th,.poster,#scene,#lb";function no(e){if(e.target.closest&&e.target.closest(A))e.preventDefault()}document.addEventListener("contextmenu",no);document.addEventListener("dragstart",no)})()</script></body></html>
+<p class="credit" style="text-align:center;font-size:12px;letter-spacing:.04em;opacity:.6;margin:40px 0 28px;padding:0 16px">designed by raíssa camargo © 2026 · <a href="privacy.html" style="color:inherit">privacy</a></p><style>img,video{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}</style><script>(function(){var A="img,video,canvas,picture,figure,.pic,.fpic,.th,.poster,#scene,#lb";function no(e){if(e.target.closest&&e.target.closest(A))e.preventDefault()}document.addEventListener("contextmenu",no);document.addEventListener("dragstart",no)})()</script></body></html>

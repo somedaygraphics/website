@@ -265,11 +265,15 @@ body.night #moonGlow{--g:228,236,255;--f:.42;mix-blend-mode:screen;animation:moo
 #quick a.h{background:var(--ink);color:#fff;box-shadow:calc(var(--u)*3) calc(var(--u)*3) 0 var(--hot);transform:rotate(1.2deg)}
 #quick a:hover,#quick a:focus-visible{background:var(--hot);color:#fff}
 .obj:focus-visible,.spot:focus-visible{outline:calc(var(--u)*4) dashed var(--hot);outline-offset:calc(var(--u)*6)}
+#credit a{color:inherit;pointer-events:auto}
+.loadsp{font-family:var(--type);font-size:15px;color:#fff;background:#1db954;border:0;border-radius:999px;padding:9px 18px 8px;cursor:pointer;box-shadow:3px 3px 0 rgba(20,20,20,.25)}
+.loadsp:hover{background:#141414}
+.spnote{margin:6px 0 0;font-size:12px;font-style:italic;opacity:.7}
 </style>
 
 <div id="loading">opening the door&hellip;</div>
 <h1 class="sr">Raissa Camargo, freelance graphic designer for musicians and creatives</h1>
-<p id="credit">designed by ra&iacute;ssa camargo &copy; 2026</p>
+<p id="credit">designed by ra&iacute;ssa camargo &copy; 2026 &middot; <a href="privacy.html">privacy</a></p>
 <div id="viewport">
   <div id="scene">
     <div id="sky" class="abs" aria-hidden="true"><div class="stars"></div></div>
@@ -323,7 +327,7 @@ const OBJS=[
   {id:'selina',sec:'meow',label:'Selina',box:[1163,1054,1456,1203]},
   {id:'london',sec:'meow',label:'London',box:[755,1518,1091,1713]},
   {id:'moon',sec:'night',box:[1125,398,1243,528],still:true},
-  {id:'guestbook',sec:'guestbook',label:'sign my guestbook',box:[1170,1606,1420,1748]},
+  {id:'guestbook',sec:'guestbook',label:'sign my guestbook',box:[1230,1630,1382,1752]},
   {id:'logo',sec:'home',label:'Home',box:[51,289,596,552]},
 ];
 // areas still inside the background drawing (until they get their own layers)
@@ -517,8 +521,14 @@ function openWin(sec){if(sec==='guestbook'){location.href='paintbook.html';retur
   ransom(document.getElementById('wt'),s.label);document.getElementById('wp').textContent=s.body;
   const wl=document.getElementById('wlinks');wl.replaceChildren(...(s.links||[]).map(([t,u])=>{const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';a.textContent=t;return a}));
   {const old=document.getElementById('wembed');if(old)old.remove();
-   if(s.embed&&/(^|\.)raissacamargo\.com$|(^|\.)somedaygraphics\.com$|netlify\.app$/.test(location.hostname)){const f=document.createElement('iframe');f.id='wembed';f.src=s.embed;f.title=s.label;f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
-     f.style.cssText='width:100%;height:152px;border:0;border-radius:12px;margin-top:14px;display:block';wl.parentNode.insertBefore(f,wl)}}
+   if(s.embed&&/(^|\.)raissacamargo\.com$|(^|\.)somedaygraphics\.com$|github\.io$/.test(location.hostname)){
+     // Spotify only loads when the visitor asks for it (it can set its own cookies)
+     const box=document.createElement('div');box.id='wembed';box.style.cssText='margin-top:14px';
+     const btn=document.createElement('button');btn.type='button';btn.className='loadsp';btn.textContent='▶ load the spotify player';
+     const small=document.createElement('p');small.className='spnote';small.textContent='this loads spotify, which may set its own cookies.';
+     btn.onclick=()=>{const f=document.createElement('iframe');f.src=s.embed;f.title=s.label;f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+       f.style.cssText='width:100%;height:152px;border:0;border-radius:12px;display:block';box.replaceChildren(f);f.focus()};
+     box.append(btn,small);wl.parentNode.insertBefore(box,wl)}}
   const wi=document.getElementById('wimg');if(s.img){wi.src=s.img;wi.alt=s.label+' cover';wi.hidden=false}else wi.hidden=true;
   win.hidden=false;win.querySelector('.btn').focus()}
 function closeWin(){win.hidden=true;scene.style.transform='';scene.classList.remove('zoom');if(lastFocus&&lastFocus.focus)lastFocus.focus()}
@@ -542,7 +552,7 @@ menu.appendChild(mi('hire rai',()=>openWin('contact'),'hire'));
    b.onclick=()=>{T(night?'night mode':'day mode');if(document.body.classList.contains('night')!==night)toggleNight();syncModes()};return b};
  m.appendChild(mk(false,'day','<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg>'));
  m.appendChild(mk(true,'night','<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.8 7.8 0 0 1 9.4 4.5a7.8 7.8 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'));
- menu.appendChild(m);const cr=document.createElement('p');cr.className='mcredit';cr.textContent='designed by ra\u00edssa camargo \u00a9 2026';menu.appendChild(cr)}
+ menu.appendChild(m);const cr=document.createElement('p');cr.className='mcredit';cr.innerHTML='designed by ra\u00edssa camargo \u00a9 2026 \u00b7 <a href="privacy.html" style="color:inherit">privacy</a>';menu.appendChild(cr)}
 function syncModes(){const n=document.body.classList.contains('night');menu.querySelectorAll('.mode').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===1?n:!n)))}
 syncModes();new MutationObserver(syncModes).observe(document.body,{attributes:true,attributeFilter:['class']});
 function toggleMenu(open){open=open??menu.hidden;menu.hidden=!open;menuBtn.setAttribute('aria-expanded',open);
