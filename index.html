@@ -437,7 +437,7 @@ function layout(){const vw=innerWidth,vh=innerHeight,kx=KEEP[1]-KEEP[0],ky=KEEPY
   if(Math.min(fitX,fitY)<cover){
     if(fitX<fitY){ // tall-ish: width is the limit
       const mouse=matchMedia('(pointer: fine)').matches; // on a computer, shrink a bit more before resorting to sideways scrolling
-      if(fitX>=cover*(mouse?.6:.86))s=Math.max(fitX,cover*.95);else{panMode=true;s=Math.max(fitY*.94,vh/H);if(vw>=600)s=Math.max(fitX,Math.min(s,vw/1750))}}
+      if(fitX>=cover*(mouse?.6:.86))s=Math.max(fitX,cover*.95);else{panMode=true;s=Math.max(fitY*.94,vh/H);if(vw>=600)s=Math.max(fitX,vh/H)/*tablets: fit full height*/}}
     else s=fitY; // wide: height is the limit, the wall carries on at the sides
   }
   S=s;const w=W*s,h=H*s;
