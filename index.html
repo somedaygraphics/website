@@ -255,9 +255,9 @@ body.night #moonGlow{--g:228,236,255;--f:.42;mix-blend-mode:screen;animation:moo
 @media (prefers-reduced-motion:reduce){.bird,.bird svg,#note.wiggle,.shoot,#screen .roll{animation:none}.puff.cloud{animation-duration:160s!important}#screen .call{animation-duration:2.6s}#screen .spin{animation-duration:7s}#scene{transition:none}}
 .mi{width:1.5em;height:auto;vertical-align:-.25em;margin-right:.35em;flex:none}
 .sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-@media (max-width:700px),(max-height:560px){#credit{display:none}}
+@media (max-width:700px),(max-height:560px),(orientation:portrait){#credit{display:none}}
 .mcredit{display:none;margin:10px 0 0;font-size:10px;letter-spacing:.04em;opacity:.55;text-align:center}
-@media (max-width:700px),(max-height:560px){.mcredit{display:block}}
+@media (max-width:700px),(max-height:560px),(orientation:portrait){.mcredit{display:block}}
 #credit{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:4;margin:0;font:11px/1 var(--body);letter-spacing:.04em;color:var(--ink);opacity:.5;pointer-events:none}
 .tagline{display:block;font-family:var(--head);font-size:calc(var(--u)*25);line-height:1.15;margin-bottom:calc(var(--u)*12);text-wrap:balance}
 #quick{display:flex;flex-wrap:wrap;gap:calc(var(--u)*12);margin-top:calc(var(--u)*18)}
@@ -430,14 +430,14 @@ let S=1,panMode=false;
 const KEEP=[20,2900],KEEPY=[205,1740];
 // edge strips stretched into any spare space so the wall and floor carry on past the drawing
 const edges={};(function(){const im=document.getElementById('bg');const go=()=>{try{const strip=(sx,sy,w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(im,sx,sy,w,h,0,0,w,h);return 'url('+c.toDataURL()+')'};
-  const iw=im.naturalWidth,ih=im.naturalHeight;edges.l=strip(3,0,1,ih);edges.r=strip(iw-4,0,1,ih);layout()}catch(e){}};
+  const iw=im.naturalWidth,ih=im.naturalHeight;edges.l=strip(3,0,1,ih);edges.r=strip(iw-4,0,1,ih);edges.t=strip(0,0,iw,1);layout()}catch(e){}};
   if(im.complete&&im.naturalWidth)go();else im.addEventListener('load',go,{once:true})})();
 function layout(){const vw=innerWidth,vh=innerHeight,kx=KEEP[1]-KEEP[0],ky=KEEPY[1]-KEEPY[0];
   const cover=Math.max(vw/W,vh/H),fitX=vw/kx,fitY=vh/ky;let s=cover;panMode=false;
   if(Math.min(fitX,fitY)<cover){
     if(fitX<fitY){ // tall-ish: width is the limit
       const mouse=matchMedia('(pointer: fine)').matches; // on a computer, shrink a bit more before resorting to sideways scrolling
-      if(fitX>=cover*(mouse?.6:.86))s=Math.max(fitX,cover*.95);else{panMode=true;s=Math.max(fitY*.94,vh/H)}}
+      if(fitX>=cover*(mouse?.6:.86))s=Math.max(fitX,cover*.95);else{panMode=true;s=Math.max(fitY*.94,vh/H);if(vw>=600)s=Math.max(fitX,Math.min(s,vw/1750))}}
     else s=fitY; // wide: height is the limit, the wall carries on at the sides
   }
   S=s;const w=W*s,h=H*s;
@@ -452,7 +452,8 @@ function layout(){const vw=innerWidth,vh=innerHeight,kx=KEEP[1]-KEEP[0],ky=KEEPY
   // fill spare space with the stretched edges
   const L=[];if(edges.l&&!panMode){if(left>0){L.push(`${edges.l} 0 ${top}px/${Math.ceil(left)+1}px ${h}px no-repeat`,`${edges.r} ${left+w-1}px ${top}px/${Math.ceil(vw-left-w)+2}px ${h}px no-repeat`)}
     if(top>0)L.push(`linear-gradient(#fff,#fff) 0 0/100% ${Math.ceil(top)+1}px no-repeat`)}
-  vp.style.background=L.length?L.join(',')+',#fff':'';
+  if(panMode&&edges.t&&top>0)L.push(`${edges.t} 0 0/${w}px ${Math.ceil(top)+1}px no-repeat`); // tall tablets: carry the ceiling/wall colours up
+  vp.style.background=L.length?L.join(',')+',#fff':'';vp.style.backgroundAttachment=panMode?'local':'';
   vp.classList.toggle('pan',panMode);
   placePoster(S)}
 addEventListener('resize',layout);layout();
