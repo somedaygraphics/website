@@ -172,7 +172,9 @@ body.night #tvGlow{animation:tvflick 3.6s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.012,1.035)}}
 .obj.still.on{transform:none}
 body.night #tex{opacity:.3}
-#texSide{position:absolute;inset:0;pointer-events:none;opacity:.5;transition:opacity 1s;background:url(img/texture-room.webp) 0 0/100% 100% repeat}
+#texSide{position:absolute;inset:0;pointer-events:none;opacity:.5;transition:opacity 1s}
+#lampSide{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1s;mix-blend-mode:screen}
+body.night #lampSide{opacity:1}
 body.night #texSide{opacity:.3}
 #nightSide{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1s;mix-blend-mode:multiply;background:rgb(78,64,128)}
 body.night #nightSide{opacity:1}
@@ -278,7 +280,7 @@ body.night #moonGlow{--g:228,236,255;--f:.42;mix-blend-mode:screen;animation:moo
 <div id="loading">opening the door&hellip;</div>
 <h1 class="sr">Raissa Camargo, freelance graphic designer for musicians and creatives</h1>
 <p id="credit">designed by ra&iacute;ssa camargo &copy; 2026 &middot; <a href="privacy.html">privacy</a></p>
-<div id="viewport"><div id="texSide"></div><div id="nightSide"></div>
+<div id="viewport"><div id="texSide"></div><div id="nightSide"></div><div id="lampSide"></div>
   <div id="scene">
     <div id="sky" class="abs" aria-hidden="true"><div class="stars"></div></div>
     <img id="bg" alt="Rai's bedroom: a bed with two cats, a record player and TV on the shelf, a clothes rack, posters on the wall" src="img/background.webp">
@@ -458,7 +460,9 @@ function layout(){const vw=innerWidth,vh=innerHeight,kx=KEEP[1]-KEEP[0],ky=KEEPY
     if(top>0)L.push(`linear-gradient(#fff,#fff) 0 0/100% ${Math.ceil(top)+1}px no-repeat`)}
   if(panMode&&edges.t&&top>0)L.push(`${edges.t} 0 0/${w}px ${Math.ceil(top)+1}px no-repeat`); // tall tablets: carry the ceiling/wall colours up
   vp.style.background=L.length?L.join(',')+',#fff':'';vp.style.backgroundAttachment=panMode?'local':'';
-  vp.classList.toggle('pan',panMode);{const ts=document.getElementById('texSide');const ns=document.getElementById('nightSide');if(ns){ns.hidden=panMode;const cx=left+w*.19,cy=top+h*.52,R=Math.hypot(w*.81,h*.52);ns.style.background=`linear-gradient(to right,transparent ${left+w-2}px,rgb(94,80,138) ${left+w-2}px),radial-gradient(circle ${R}px at ${cx}px ${cy}px,rgba(255,182,88,1) 0,rgba(176,116,128,1) 20%,rgba(78,64,128,1) 62%)`}if(ts){ts.hidden=panMode;ts.style.backgroundSize=w+'px '+h+'px';ts.style.backgroundPosition=left+'px '+top+'px'}}
+  vp.classList.toggle('pan',panMode);{const ts=document.getElementById('texSide');const ns=document.getElementById('nightSide');if(ns){ns.hidden=panMode;const cx=left+w*.19,cy=top+h*.52,R=Math.hypot(w*.81,h*.52);ns.style.background=`linear-gradient(to right,transparent ${left+w-2}px,rgb(94,80,138) ${left+w-2}px),radial-gradient(circle ${R}px at ${cx}px ${cy}px,rgba(255,182,88,1) 0,rgba(176,116,128,1) 20%,rgba(78,64,128,1) 62%)`}if(ts){ts.hidden=panMode;const u=(getComputedStyle(document.getElementById('tex')).backgroundImage.match(/url\(["']?([^"')]+)/)||[])[1];
+    if(u){const f=u.replace(/\.webp$/,'-flip.webp');ts.style.background=`url("${f}") ${left-w}px ${top}px/${w}px ${h}px no-repeat,url("${f}") ${left+w}px ${top}px/${w}px ${h}px no-repeat`}}
+  const ls=document.getElementById('lampSide');if(ls){ls.hidden=panMode;const lx=left+w*.19,ly=top+h*.5,LR=Math.hypot(w*.81,h*.5);ls.style.background=`linear-gradient(to right,rgb(19,20,19) ${left+2}px,transparent ${left+2}px),radial-gradient(circle ${LR}px at ${lx}px ${ly}px,rgba(226,98,26,.86) 0,rgba(196,66,16,.5) 10%,rgba(170,48,12,0) 21%)`}}
   placePoster(S)}
 addEventListener('resize',layout);layout();
 
