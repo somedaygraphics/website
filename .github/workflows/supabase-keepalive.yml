@@ -1,0 +1,17 @@
+# Pings the paintbook database every 3 days so Supabase's free tier
+# doesn't pause it for inactivity. Uses only the public (publishable) key,
+# which is already in the website's code.
+name: Keep paintbook database awake
+on:
+  schedule:
+    - cron: "17 12 */3 * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read one approved drawing
+        run: |
+          curl -fsS -o /dev/null -w "status %{http_code}\n" \
+            -H "apikey: sb_publishable_HGjBYa4LAId3hIb5GnZD-g_Y8afahAP" \
+            "https://bsxhjhjsbnxqapwfxhzi.supabase.co/rest/v1/paintings?select=id&limit=1"
